@@ -29,6 +29,14 @@
   $ npm install
   ```
 
+* `index.html`の修正
+
+  ```diff
+  `index.html`
+   - <html lang="en">
+   + <html lang="jp">
+  ```
+
 * 稼働確認
 
   ```bat
