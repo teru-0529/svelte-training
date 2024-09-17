@@ -32,7 +32,7 @@
 * `index.html`の修正
 
   ```diff
-  `index.html`
+  `#index.html`
    - <html lang="en">
    + <html lang="jp">
   ```
@@ -44,9 +44,31 @@
   $ npm run dev
   ```
 
+* `Dockerfile`作成
+* .`dockerignore`作成
+* `package.json`にサーバースクリプトを追加
+  * sirv-cli を使ってbuildによりdistに作成された静的ファイルをサーブ
+  * すべてのネットワークインターフェースからアクセスできるように設定
+
+  ```diff
+  `#package.json`
+     "scripts": {
+       "build": "rollup -c",
+       "dev": "rollup -c -w",
+   +    "start": "sirv dist --no-clear --single --host 0.0.0.0"
+    }
+  ```
+
+* `sirv-cli`インストール
+
+  ```bat
+  # install
+  $ npm install sirv-cli --save
+  ```
+
 ## usege
 
-### 稼働確認(ローカルソース)
+### ソースコード実行(ローカル・ホットリロード)
 
 * サーバー実行
 
@@ -58,9 +80,20 @@
 * アクセス
     http://localhost:5173/
 
-## note
+### コンテナ実行確認(ローカル)
 
-* エラーがいっぱい出ている
+* コンテナbuild/run
+
+  ```bat
+  # container build
+  $ docker build -t {IMAGE_NAME} .
+
+  # container run
+  $ docker run -p 3000:8080 {IMAGE_NAME}
+  ```
+
+* アクセス
+    http://localhost:3000/
 
 ## appendix
 
