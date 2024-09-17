@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  svelte-app:
+    image: ghcr.io/teru-0529/svelte-training:latest
+    container_name: svelte-app
+    ports:
+      - ${SVELTE_HOST_PORT}:8080
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped

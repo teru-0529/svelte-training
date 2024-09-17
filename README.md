@@ -69,6 +69,8 @@
 * githubのラベル設定
   * トークンの設定
 * `release.yaml`の作成
+* `docker-compose.yaml`の作成
+  * githubのpackageに作成されたDockerイメージを動かす。
 
 ## usege
 
@@ -98,6 +100,18 @@
 
 * アクセス
     http://localhost:3000/
+
+### コンテナ実行確認(github)
+
+* コンテナbuild/run
+
+  ```bat
+  # container pull and run
+  $ docker-compose up
+  ```
+
+* アクセス
+    http://localhost:6600/
 
 ## appendix
 
