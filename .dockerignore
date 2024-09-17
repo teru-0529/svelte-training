@@ -1,0 +1,30 @@
+# Node.js パッケージ関連
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# ビルド成果物が置かれる場所
+dist
+
+# Git関連
+.git
+.gitignore
+
+# Docker関連
+Dockerfile
+docker-compose.yaml
+.dockerignore
+
+# IDEやエディタの設定ファイル
+settings.code-workspace
+.vscode
+.idea
+*.suo
+*.ntvs
+*.njsproj
+*.sln
+
+# OSやエディタによって生成されるキャッシュファイル
+*.DS_Store
+Thumbs.db
