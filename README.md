@@ -66,6 +66,10 @@
   $ npm install sirv-cli --save
   ```
 
+* githubのラベル設定
+  * トークンの設定
+* `release.yaml`の作成
+
 ## usege
 
 ### ソースコード実行(ローカル・ホットリロード)
