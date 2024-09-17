@@ -30,10 +30,11 @@ jobs:
           TAG=${GITHUB_REF##*/}
           docker build -t ghcr.io/${{ github.repository }}:$TAG \
                        -t ghcr.io/${{ github.repository }}:latest \
-                       --label "org.opencontainers.image.source=https://github.com/${{ github.repository }}" .
+                       --label "org.opencontainers.image.source=https://github.com/${{ github.repository }}" \
+                       --label "org.opencontainers.image.version=$TAG" .
 
       - name: Push Docker image
         run: |
           TAG=${GITHUB_REF##*/}
-          docker push ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:$TAG
-          docker push ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest
+          docker push ghcr.io/${{ github.repository }}:$TAG
+          docker push ghcr.io/${{ github.repository }}:latest
